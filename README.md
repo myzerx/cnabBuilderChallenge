@@ -14,14 +14,15 @@ Neste exemplo o **Q** aparece na posição/coluna 14, cada posição representa 
 hoje ao rodar:
 
 ```bash
-node cnabRows.js
+cd src
+node cnabCli.js
 ```
 
 temos o seguinte output:
 
 ```bash
-node cnabRows.js --help
-Uso: cnabRows.js [options]
+node cnabCli.js --help
+Uso: cnabCli.js [options]
 
 Opções:
       --help      Exibe ajuda                                         [booleano]
@@ -33,16 +34,25 @@ Opções:
   -s, --segmento  tipo de segmento                        [string] [obrigatório]
 
 Exemplos:
-  cnabRows.js -f 21 -t 34 -s p  lista a linha e campo que from e to do cnab
+  cnabCli.js -f 21 -t 34 -s p utils/cnabExample.rem  lista a linha e campo que from e to do cnab com o local do arquivo
 ```
 
 hoje a ferramenta busca uma posição e loga isso no terminal.
 
 desafio consiste:
 
-* poder passar na CLI o local do arquivo.
-* pesquisar por nome da empresa, e mostrar em que posição que ela foi achada e qual o tipo de segmento ela pertence.
+* poder passar na CLI o local do arquivo. [feito]
+  new input: 
+  ```bash
+  node cnabCli.js -f 21 -t 34 -s p utils/cnabExample.rem 
+  ```
 
-* **Bonus**, ler o cnab e escrever um novo arquivo em formato JSON, contendo nome e endereço da empresa.
+* pesquisar por nome da empresa, e mostrar em que posição que ela foi achada e qual o tipo de segmento ela pertence. [feito]
+  new input: 
+  ```bash
+  node cnabCli.js --businessName "CAIXA" utils/cnabExample.rem
+  ```
+
+* **Bonus**, ler o cnab e escrever um novo arquivo em formato JSON, contendo nome e endereço da empresa. [feito]
 
 O candidato tem total liberdade de mudar a estrutura atual desse projeto, a ideía é ver a criatividade de resolver esse problema.
